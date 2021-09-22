@@ -2,11 +2,12 @@
   - Ganache is installed locally and is up and running
 
 - In package.json add the following two scripts  
-  - "generate-types": "npx typechain --target=truffle-v5 'build/contracts/*.json'",
+  - "generate-types": "npx typechain --target=truffle-v5 ./build/contracts/*.json",
   - "compile" : "truffle compile && npm run generate-types"  
 
 - run the following command to compile contracts and generate types folder
-  - npm run compile 
+  - npm run compile
+    - you should have 5 typings generated  
 
 - add tsconfig.json
   -  "typeRoots": [
@@ -25,7 +26,3 @@
         
 - deploy contracts
   - command: truffle deploy --network development --reset
-
-- don't find there is any huge benefits using TS in migrations
-  as we can't really type artifacts properly #TA-04 
-  - Also Truffle.Artifacts interface is actually empty 
